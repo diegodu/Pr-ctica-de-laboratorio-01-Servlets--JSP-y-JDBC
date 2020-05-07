@@ -12,9 +12,9 @@ public class Telefono {
 		
 	}
 
-	public Telefono(int id, String numero, String operadora, String tipo) {
+	public Telefono( String numero, String operadora, String tipo) {
 		super();
-		this.id = id;
+	
 		this.numero = numero;
 		this.operadora = operadora;
 		this.tipo = tipo;
