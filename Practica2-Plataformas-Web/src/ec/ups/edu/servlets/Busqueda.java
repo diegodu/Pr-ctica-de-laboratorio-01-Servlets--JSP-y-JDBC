@@ -38,10 +38,15 @@ public class Busqueda extends HttpServlet {
         
         PersonaDAO personaDao = DAOFactory.getFactory().getPersonaDAO();
         List<Persona> personas = personaDao.findByIdOrMail(contexto);
+        List<Persona> personas1 = personaDao.findByIdOrMail(contexto);
         System.out.println("eeeeeee"+personas);
         
         request.setAttribute("personas", personas);
-        getServletContext().getRequestDispatcher("/JSPs/busqueda.jsp").forward(request, response);
+     
+     
+    	  getServletContext().getRequestDispatcher("/JSPs/busqueda.jsp").forward(request, response);
+    
+      
         //System.out.println("users: "+users.toString());
     }
 

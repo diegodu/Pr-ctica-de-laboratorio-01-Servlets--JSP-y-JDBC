@@ -9,7 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mi agenda</title>
-    <link rel="shortcut icon" href="imagenes/emaill.png" type="image/x-icon">
+    
+    <link rel="shortcut icon" href="/Practica2-Plataformas-Web/JSPs/imagenes/emaill.png" type="image/x-icon">
     <link rel="stylesheet" href="/Practica2-Plataformas-Web/JSPs/css/estilos-agenda.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -33,8 +34,8 @@
  <header>
         <nav>
        
-            <a href="#">Micuenta</a>
-            <a href="MiAgenda?logout=true">Inicio</a>
+            <a href="MiAgenda">Mi cuenta</a>
+            <a href="MiAgenda?logout=true">Salir</a>
           
         </nav>
         <section class="textos-header">
@@ -54,13 +55,13 @@
                             <c:set var="i" value = "${0}"/>
                             <c:forEach var="persona" items="${personas}">
                                 <c:set var="i" value = "${i+1}"/>
-                                <tr data-toggle="modal" data-target="#exampleModal${i}" data-whatever="@mdo">
+                                <tr style="margin-top: 100px; height: 50px" data-toggle="modal" data-target="#exampleModal${i}" data-whatever="@mdo">
                                     <td>
                                         <div class="ui middle aligned selection list">
                                             <div class="item">
-                                                <img class="ui avatar image" src="public/img/img.png">
+                                                <img style="height: 100px; width: 100px" class="ui avatar image" src="JSPs/imagenes/perfil.jpg">
                                                 <div class="content">
-                                                    <div class="header">${persona.nombre} ${persona.nombre}</div>
+                                                    <div class="header">${fn:toUpperCase(persona.nombre)} ${fn:toUpperCase(persona.apellido)}</div>
                                                 </div>
                                             </div>
 
@@ -69,30 +70,32 @@
                                     <td>${persona.telefonos[0].numero}</td>
                                 </tr>
 
-                            <div class="modal fade" id="exampleModal${i}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
+                            <div style="height: 600px; width: 350px; margin-left: 600px; margin-top: 120px" class="modal fade" id="exampleModal${i}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" style="background-color: #BDBFCB; role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h3 class="modal-title" id="exampleModalLabel">${persona.nombre} ${persona.apellido}  
-                                                
-                                                <a href="mailto:${persona.correo}" class="ui small primary labeled icon button mail-user">
+                                            <h3 style="position: absolute;" class="modal-title" id="exampleModalLabel">${fn:toUpperCase(persona.nombre)} ${fn:toUpperCase(persona.apellido)}
+                                                                                         
+                                            </h3>
+                                            
+                                            <h2 style="color: black; margin-top: 100px">${persona.correo}
+                                            <a href="mailto:${persona.correo}" class="ui small primary labeled icon button mail-user">
                                                     <i class="envelope icon"></i> Enviar correo
                                                 </a>
-
-                                            </h3>
+                                            </h2>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <h5>Detalles de contacto</h5>
+                                            <h3 style="color: black;">Detalles de contacto</h3>
                                             <c:forEach var="telefono" items="${persona.telefonos}">
-                                                <p><i class="phone icon"></i> <a href="tel:${telefono.numero}">${telefono.numero}</a>  &#9679; ${telefono.tipo} &#9679; ${telefono.operadora}</p>
+                                                <p style="margin-left: 70px; height: 2px"><i class="phone icon"></i> <a href="tel:${telefono.numero}">${telefono.numero}</a>  &#9679; ${telefono.tipo} &#9679; ${telefono.operadora}</p>
 
                                             </c:forEach>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button style="background-color: blue; color: white;" type="button" class="modal-body" data-dismiss="modal">Close</button>
                                         </div>
                                     </div>
                                 </div>
