@@ -17,6 +17,7 @@ public interface TelefonoDAO extends GenericDAO<Telefono, Integer> {
  
 
     public abstract List<Telefono> findByPersonaId(String cedula);
+    public abstract List<Telefono> findByTelefono(String cedula,String numero);
 
  
 

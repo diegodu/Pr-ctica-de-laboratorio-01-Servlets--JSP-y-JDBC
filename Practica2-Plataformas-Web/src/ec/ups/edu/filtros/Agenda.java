@@ -106,7 +106,7 @@ public class Agenda implements Filter {
 	        } else {
 	           
 	        	System.out.println("loginnnnn");
-	            res.sendRedirect("/Practica2-Plataformas-Web/Login");
+	            res.sendRedirect("Login");
 	        }
 	    }
 

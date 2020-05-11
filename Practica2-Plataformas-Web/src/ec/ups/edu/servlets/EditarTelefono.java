@@ -32,7 +32,7 @@ public class EditarTelefono extends HttpServlet {
                 TelefonoDAO telefonoDao = DAOFactory.getFactory().getTelefonoDAO();
                 Telefono telefono= telefonoDao.findById(Integer.parseInt(id));
                 telefonoDao.delete(telefono);
-                System.out.println("holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+                System.out.println("telllll"+telefono);
                 //System.out.println("telefono a eliminar.. " + id );
                 response.sendRedirect("/Practica2-Plataformas-Web/MiAgenda");
             }

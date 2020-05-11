@@ -34,7 +34,7 @@ public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/Practica2-Plataformas-Web/JSPs/login.html");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/JSPs/login.html");
         dispatcher.forward(request, response);
     }
 

@@ -9,7 +9,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Mi agenda</title>
-<link rel="shortcut icon" href="/Practica2-Plataformas-Web/JSPs/imagenes/emaill.png" type="image/x-icon">
+<link rel="shortcut icon"
+	href="/Practica2-Plataformas-Web/JSPs/imagenes/emaill.png"
+	type="image/x-icon">
 <link rel="stylesheet"
 	href="/Practica2-Plataformas-Web/JSPs/css/estilos-agenda.css">
 <link
@@ -40,6 +42,7 @@
 <body>
 
 	<c:set var="persona" value="${requestScope['persona']}" />
+	<c:set var="numerotel" value="${requestScope['numerotel']}" />
 	<!-- Button trigger modal -->
 
 	<header>
@@ -50,8 +53,11 @@
 					placeholder="cedula o e-mail" id="buscar"> <input
 					style="border-radius: 6px" type="submit" value="Buscar"> <a
 					style="color: white; margin-right: 10px; margin-left: 10px">${fn:toUpperCase(persona.nombre)}
-					${fn:toUpperCase(persona.apellido)}</a> <a style="color: white"
-					href="MiAgenda?logout=true">Cerrar sesion</a>
+					${fn:toUpperCase(persona.apellido)}</a> <a
+					style="color: white; padding-left: 10px; padding-right: 10px"
+					data-toggle="modal" data-target="#exampleModallCenter">Agregar
+					telefono </a> <a style="color: white" href="MiAgenda?logout=true">Cerrar
+					sesion</a>
 			</form>
 		</nav>
 
@@ -97,7 +103,8 @@
 																${telefono.numero}</p>
 														</div>
 														<div class="modal-footer">
-															<button style="background-color: blue; color: white;" type="button" class="btn btn-primary" 
+															<button style="background-color: blue; color: white;"
+																type="button" class="btn btn-primary"
 																data-dismiss="modal">Cancelar</button>
 															<a style="background-color: blue; color: white;"
 																href="EditarTelefono?eliminar=true&telefonoID=${telefono.id}"
@@ -188,23 +195,23 @@
 								<tr>
 									<th></th>
 									<th colspan="4">
-
-										<button
-											style="border-radius: 6px; height: 40px; font-size: 15px; background-color: #8683E6; color: white;"
-											type="button"
-											class="ui right floated small primary labeled icon button"
-											data-toggle="modal" data-target="#exampleModallCenter">
-											<i class="phone icon"></i> Agregar telefono
-										</button>
-										
+										<form action="MiAgenda">
+											<input style="border-radius: 6px" type="text" name="telefono"
+												placeholder="mi telefono" id="telefono"> <input
+												style="border-radius: 6px" type="submit" value="Buscar">
+										</form>
+									
 									</th>
+
 								</tr>
 							</tfoot>
 						</table>
 					</c:when>
 					<c:otherwise>
 						<h1>No hay contactos</h1>
-						<button style="border-radius: 6px; height: 40px; font-size: 15px; background-color: #8683E6; color: white;"  type="button"
+						<button
+							style="border-radius: 6px; height: 40px; font-size: 15px; background-color: #8683E6; color: white;"
+							type="button"
 							class="ui left floated small primary labeled icon button"
 							data-toggle="modal" data-target="#exampleModallCenter">
 							<i class="phone icon"></i> Agregar telefono
@@ -232,14 +239,12 @@
 								class="modal-body">
 								<div class="form-group">
 									<label for="numero">Numero</label> <input type="text"
-										class="form-control" id="numero" name="numero"
-									 required="">
+										class="form-control" id="numero" name="numero" required="">
 								</div>
 
 								<div class="form-group">
 									<label for="tipo">Tipo</label> <input type="text" list="items"
-										class="form-control" id="tipo" name="tipo" required=""
-										>
+										class="form-control" id="tipo" name="tipo" required="">
 									<datalist id="items">
 										<option value="Movil"></option>
 										<option value="Convencional"></option>
@@ -272,7 +277,8 @@
 				</div>
 			</div>
 			
-			
+
+
 
 		</section>
 

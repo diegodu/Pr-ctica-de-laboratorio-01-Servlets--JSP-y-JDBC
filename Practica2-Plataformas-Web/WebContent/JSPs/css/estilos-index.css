@@ -159,3 +159,39 @@ footer{
     justify-content: center;
     margin-left: 100px;
     text-align: center;
+}
+/*clientes*/
+.cards{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.cards .card{
+    background: #4d0686;
+    display: flex;
+    width: 46%;
+    height: 250px;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgb(0, 0, 0, .6);
+
+}
+.cards .card img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid white;
+    border-radius: 50%;
+    display: block;
+}
+.cards .card > .contenido-texto-card{
+    width: 60%;
+    color: white;
+
+}
+.cards .cards > .contenido-texto-card h4{
+    font-weight: 100;
+    padding-top: 5px;
+
+}

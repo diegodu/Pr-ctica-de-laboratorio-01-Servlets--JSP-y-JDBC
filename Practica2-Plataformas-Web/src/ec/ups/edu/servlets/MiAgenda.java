@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import ec.ups.edu.dao.DAOFactory;
 import ec.ups.edu.dao.PersonaDAO;
+import ec.ups.edu.dao.TelefonoDAO;
 import ec.ups.edu.modelo.Persona;
+import ec.ups.edu.modelo.Telefono;
 
 /**
  * Servlet implementation class MiAgenda
@@ -22,6 +24,7 @@ public class MiAgenda extends HttpServlet {
             throws ServletException, IOException {
 
         String sesion = request.getParameter("logout");
+        String numero = request.getParameter("telefono");
         if (sesion != null) {
             if (sesion.equals("true")) {
                 //System.out.println("Sesion cerrada de id " + request.getSession().getAttribute("sesionID"));
@@ -35,7 +38,19 @@ public class MiAgenda extends HttpServlet {
 
             request.setAttribute("persona", persona);
            System.out.println("personaaaa"+persona);
+         
+           if(numero != null) {
+        	   TelefonoDAO telefonoDao = DAOFactory.getFactory().getTelefonoDAO();
+               persona.setTelefonos(telefonoDao.findByTelefono(persona.getCedula(), numero)); 
+            //   request.setAttribute("numerotel", telefono.getNumero());
+      
+        	   
+           } 
+            
+            
             getServletContext().getRequestDispatcher("/JSPs/agenda.jsp").forward(request, response);
+            
+            
         
             //RequestDispatcher dispatcher = request.getRequestDispatcher("/views/jsp/my-agenda.jsp");
             //dispatcher.forward(request, response);

@@ -102,6 +102,7 @@ public class JDBCPersonaDAO extends JDBCGenericDAO<Persona, String> implements P
 	        }
 	        return persona;
 	    }
+	    
 
 	    @Override
 	    public List<Persona> findByIdOrMail(String context) {

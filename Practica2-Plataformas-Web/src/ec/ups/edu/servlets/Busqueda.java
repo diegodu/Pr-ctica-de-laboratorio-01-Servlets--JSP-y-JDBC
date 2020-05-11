@@ -38,7 +38,7 @@ public class Busqueda extends HttpServlet {
         
         PersonaDAO personaDao = DAOFactory.getFactory().getPersonaDAO();
         List<Persona> personas = personaDao.findByIdOrMail(contexto);
-        List<Persona> personas1 = personaDao.findByIdOrMail(contexto);
+
         System.out.println("eeeeeee"+personas);
         
         request.setAttribute("personas", personas);
