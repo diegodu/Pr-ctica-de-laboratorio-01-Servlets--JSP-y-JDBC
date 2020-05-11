@@ -148,7 +148,7 @@
 													<div style="background-color: #BDBFCB; border-radius: 5px"
 														class="modal-body">
 														<div class="form-group">
-															<label for="numero">Numero</label> <input type="text"
+															<label for="numero">Numero</label> <input maxlength="10" minlength="10" pattern="[0-9]+" type="text"
 																class="form-control" id="numero" name="numero"
 																value="${telefono.numero}" required="">
 														</div>
@@ -238,7 +238,7 @@
 							<div style="background-color: #BDBFCB; border-radius: 5px"
 								class="modal-body">
 								<div class="form-group">
-									<label for="numero">Numero</label> <input type="text"
+									<label for="numero">Numero</label> <input maxlength="10" minlength="10" pattern="[0-9]+" type="text"
 										class="form-control" id="numero" name="numero" required="">
 								</div>
 
