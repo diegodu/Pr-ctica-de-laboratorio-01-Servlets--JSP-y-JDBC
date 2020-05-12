@@ -154,5 +154,13 @@ JSPs
 
 ![image](https://user-images.githubusercontent.com/34308601/81628608-bd7b3f00-93c6-11ea-9b62-4e0047004805.png)
 
+CONCLUSIONES:
+
+• La practica desarrollada ha sido empleada satisfactoriamente con los requerimientos solicitados por nuestro
+docente, de la misma forma se menciona que el desarrollo de la practica me a ayudado mucho en cuanto
+al conocimiento de JEE y poderlo emplear en una aplicación web.
+
+• El sistema que se ha realizado funciona correctamente y esta implementado todo lo requerido para su
+desarrollo
 
 
